@@ -14,7 +14,7 @@ func ExecCronJob(jobExecutor *JobExecutors) *cron.Cron {
 
 	scheduler.AddFunc(itemJobTime, func() {
 		log.Info().Msg("Exec job item sync...")
-		jobExecutor.JobItems()
+		jobExecutor.execARI()
 	})
 
 	scheduler.Start()
